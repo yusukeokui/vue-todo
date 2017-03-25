@@ -12,7 +12,7 @@
     <div data-reactroot="" class="App">
         <div id="todolist">
             <div id="unfinished"><h2>unfinished</h2>
-                <div class="item" v-for="todo in unfinished()"><label><input type="checkbox" v-on:click="update(todo)">{{
+                <div class="item" v-for="todo in unfinishedTodos"><label><input type="checkbox" v-on:click="update(todo)">{{
                     todo.name }}
                     <button v-on:click="remove(todo)">×</button>
                 </label></div><!-- react-text: 10 --><!-- /react-text -->
@@ -21,8 +21,8 @@
                 </div>
             </div>
             <div id="finished"><h2>finished</h2><!-- react-text: 16 --><!-- /react-text -->
-                <div class="item" v-for="todo in finished()"><label><input type="checkbox" v-on:click="update(todo)"
-                                                                           checked>{{ todo.name }}
+                <div class="item" v-for="todo in finishedTodos"><label><input type="checkbox" v-on:click="update(todo)"
+                                                                         checked>{{ todo.name }}
                     <button v-on:click="remove(todo)">×</button>
                 </label></div>
             </div>

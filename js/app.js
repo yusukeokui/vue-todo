@@ -4,17 +4,19 @@ var app = new Vue({
         newName: '',
         todos: [{name: '打合せ', finished: false}, {name: '実装', finished: true},],
     },
-    methods: {
-        finished: function () {
+    computed: {
+        finishedTodos: function () {
             return this.todos.filter(function (todo) {
                 return todo.finished;
             });
         },
-        unfinished: function () {
+        unfinishedTodos: function () {
             return this.todos.filter(function (todo) {
                 return !todo.finished;
             });
         },
+    },
+    methods: {
         add: function () {
             if (this.newName !== 0 && !this.newName) return;
             this.todos.push({
