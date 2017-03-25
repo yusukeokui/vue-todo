@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <title>Vue App</title>
+    <link rel="stylesheet" href="css/common.css">
+</head>
+<body>
+<div id="root">
+    <div data-reactroot="" class="App">
+        <div id="todolist">
+            <div id="unfinished"><h2>unfinished</h2>
+                <div class="item" v-for="todo in unfinished()"><label><input type="checkbox" v-on:click="update(todo)">{{
+                    todo.name }}
+                    <button v-on:click="remove(todo)">×</button>
+                </label></div><!-- react-text: 10 --><!-- /react-text -->
+                <div class="add"><input type="text" placeholder="type your item" v-model="newName">
+                    <button v-on:click="add">add</button>
+                </div>
+            </div>
+            <div id="finished"><h2>finished</h2><!-- react-text: 16 --><!-- /react-text -->
+                <div class="item" v-for="todo in finished()"><label><input type="checkbox" v-on:click="update(todo)"
+                                                                           checked>{{ todo.name }}
+                    <button v-on:click="remove(todo)">×</button>
+                </label></div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<script src="https://unpkg.com/vue@2.2.5"></script>
+<script src="js/app.js"></script>
+
+</body>
+</html>
